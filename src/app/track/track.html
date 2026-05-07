@@ -1,0 +1,98 @@
+<div class="track-page">
+
+  <div class="track-header">
+    <span class="pill">Order Tracking</span>
+    <h1>Track Your Order</h1>
+    <p>Enter your Order ID to view shipment status and delivery updates.</p>
+  </div>
+
+  <div class="track-card">
+    <h3>Order Lookup</h3>
+
+    <div class="search-box">
+      <input
+        type="text"
+        [(ngModel)]="orderId"
+        placeholder="Enter Order ID (DDM-2026-XXXXX)"
+        (keyup.enter)="trackOrder()"
+      />
+      <button (click)="trackOrder()" [disabled]="!orderId.trim()">Track Order</button>
+    </div>
+  </div>
+
+  <div class="order-card" *ngIf="orderFound">
+    <!-- Top Info -->
+    <div class="order-top">
+      <div>
+        <h2>Order #{{ mockOrder.id }}</h2>
+        <p>{{ mockOrder.date }}</p>
+      </div>
+
+      <span class="status {{ mockOrder.status }}">
+        {{ mockOrder.statusLabel }}
+      </span>
+    </div>
+
+    <div class="order-grid">
+      <div>
+        <span>Delivery Date</span>
+        <strong>{{ mockOrder.delivery }}</strong>
+      </div>
+      <div>
+        <span>Location</span>
+        <strong>{{ mockOrder.city }}</strong>
+      </div>
+      <div>
+        <span>Total Amount</span>
+        <strong>₹{{ mockOrder.total }}</strong>
+      </div>
+    </div>
+
+    <div class="progress-box">
+      <h4>Shipment Progress</h4>
+
+      <div class="timeline">
+        <div
+          class="timeline-step"
+          *ngFor="let step of mockOrder.steps"
+          [class.done]="step.done"
+          [class.active]="step.active"
+        >
+          <div class="dot"></div>
+          <div class="line"></div>
+
+          <div class="content">
+            <span>{{ step.label }}</span>
+            <small>{{ step.time }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="items-box">
+      <h4>Order Items</h4>
+
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+        </tr>
+
+        <tr *ngFor="let item of mockOrder.items">
+          <td>{{ item.name }}</td>
+          <td>{{ item.qty }}</td>
+          <td>₹{{ item.price }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="error-box" *ngIf="notFound">
+    <h3>Order Not Found</h3>
+    <p>
+      No results for <strong>{{ orderId }}</strong>
+    </p>
+    <a routerLink="/contact">Contact Support</a>
+  </div>
+</div>

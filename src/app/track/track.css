@@ -1,0 +1,258 @@
+.track-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background:white;
+}
+
+.track-header {
+  text-align: center;
+  margin-bottom: 50px;
+  background-color:rgb(52, 146, 146);
+}
+
+.track-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #f7f3f0;
+  margin: 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.track-header p {
+  color: #eeebe9;
+  font-size: 15px;
+}
+
+.track-card,
+.order-card,
+.error-box {
+  background: #613232;
+  border-radius: 10px;
+  padding: 28px;
+  margin-bottom: 28px;
+  border: 1px solid #e8ddd0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+
+.track-card:hover,
+.order-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.search-box {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #b5651d;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(181, 101, 29, 0.1);
+}
+
+.search-box button {
+  background: linear-gradient(135deg, #b5651d, #8c4b12);
+  color: #fff;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.search-box button:hover {
+  background: linear-gradient(135deg, #8c4b12, #5a2e0c);
+  transform: translateY(-1px);
+}
+
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-top h2 {
+  font-size: 22px;
+  color: #1a1008;
+}
+
+.order-top p {
+  font-size: 13px;
+  color: #d3cfc9;
+}
+
+.status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.status.pending {
+  background: rgba(255, 193, 7, 0.15);
+  color: #b58100;
+}
+
+.status.shipped {
+  background: rgba(0, 123, 255, 0.12);
+  color: #004085;
+}
+
+.status.delivered {
+  background: rgba(40, 167, 69, 0.15);
+  color: #1e7e34;
+}
+
+.order-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #eee;
+}
+
+.order-grid span {
+  font-size: 12px;
+  color: #f8f3ed;
+}
+
+.order-grid strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  color: #d1ccc9;
+}
+
+.progress-box {
+  margin-top: 30px;
+}
+
+.progress-box h4 {
+  margin-bottom: 20px;
+  color: #e0dad5;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e5d6c5;
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.timeline-step .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #d4c5b0;
+  position: absolute;
+  left: -1px;
+  top: 2px;
+  border: 2px solid #fff;
+}
+
+.timeline-step.done .dot {
+  background: #28a745;
+}
+
+.timeline-step.active .dot {
+  background: #b5651d;
+  box-shadow: 0 0 0 4px rgba(181, 101, 29, 0.15);
+}
+
+.timeline-step span {
+  font-weight: 500;
+  color: #f8f4f1;
+}
+
+.timeline-step small {
+  display: block;
+  font-size: 12px;
+  color: white;
+  margin-top: 3px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th {
+  background: #1a1008;
+  color: #fff;
+  font-size: 13px;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+tr:hover {
+  background: #fdf6ee;
+}
+
+.error-box {
+  text-align: center;
+  padding: 40px;
+}
+
+.error-box h3 {
+  color: white;
+}
+
+.error-box a {
+  margin-top: 12px;
+  display: inline-block;
+  color: #b5651d;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #b5651d;
+}
+
+@media (max-width: 768px) {
+  .order-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+}
