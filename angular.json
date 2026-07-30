@@ -53,6 +53,7 @@
                 }
               ],
               "outputHashing": "all",
+              "baseHref": "/DRYMEAT/",
               "optimization": {
                 "fonts": false
               }
